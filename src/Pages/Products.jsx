@@ -10,10 +10,10 @@ const onClickProduct = (id) =>
     addNewPost({ id });
 
     const request = () => {
-      fetch("http://localhost:3000/product/showProducts", {method:'Get'})
+      fetch("http://localhost:3000/products/showProducts", {method:'Get'})
     .then(res => res.json())
     .then(data => {
-      setProductCard(data.product)
+      setProductCard(data.products)
     });
     }
 
