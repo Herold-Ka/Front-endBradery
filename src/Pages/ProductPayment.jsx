@@ -1,12 +1,19 @@
 import './ProductPayement.css'
 import { useState, useEffect } from 'react';
 import { useSearchContext } from '../Context/ProductContext';
+import { useNavigate } from 'react-router-dom';
 
 const ProductPayment = () => {
   const { searchPosts } = useSearchContext();
   const [productPaymentId, setProductPaymentId] = useState([]);
   const [loading, setLoading] = useState(true);
   const [productQuantity, setProductQuantity] = useState([]);
+  let navigate = useNavigate();
+
+  const routeChange = () => {
+    let path = `/purchase`;
+    navigate(path)
+  }
 
   const handleProductQuantityChange = (index, value) => {
     const updateValues = [...productQuantity];
@@ -21,9 +28,13 @@ const ProductPayment = () => {
       console.log(productQuantity[index])
       fetch(`http://localhost:3000/product/buyProduct/${item.id}/${productQuantity[index]}`,{
         method: 'PUT',
-      })
-      
-    } )
+      });
+
+      fetch(`http://localhost:3000/productsBuy/buyProduct/${item.name}/${productQuantity[index]}/${item.price}`,{
+        method: 'POST',
+      });       
+    });
+    routeChange();
   }
 
   useEffect(() => {
@@ -49,9 +60,6 @@ const ProductPayment = () => {
         setLoading(true);
       }
     };
-
-    
-
     request();
   }, [searchPosts]);
 

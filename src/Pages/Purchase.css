@@ -1,0 +1,7 @@
+.divPurchase{
+    margin-top: 300px;
+}
+.divPurchase h1, .divPurchase p{
+    text-align: center;
+    font-family:Arial, Helvetica, sans-serif ;
+}
