@@ -6,7 +6,7 @@ import ProductPayment from './Pages/ProductPayment'
 import SignIn from './Pages/SignIn'
 import { SearchProvider } from './Context/ProductContext'
 import Purchase from './Pages/Purchase'
-import Product from './Pages/Products'
+import Product from './Pages/Product'
 
 
 function App() {

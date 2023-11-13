@@ -1,0 +1,20 @@
+.divSingleProduct{
+    margin-top: 250px;
+    display: flex;
+    flex-direction: column;
+}
+.divSingleProduct img{
+    max-height: 300px;
+    margin: auto;
+    border-radius: 10px;
+}
+
+.divSingleProduct > p {
+    text-align: center;
+}
+.divSingleProduct ul{
+    margin: auto;
+    list-style: none;
+    display: flex;
+    min-width: 300px;
+}

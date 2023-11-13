@@ -1,19 +1,19 @@
 import {useState, useEffect} from 'react'
 import './Products.css'
 import { useSearchContext } from '../Context/ProductContext'; 
-//import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const Products = () => {
 const [productCard, setProductCard] = useState([]);
 const { addNewPost } = useSearchContext();
-//let navigate = useNavigate();
+let navigate = useNavigate();
 const onClickProduct = (id) =>
     addNewPost({ id });
 
-    /*const routeChange = () => {
+    const routeChange = (id) => {
       let path = `/product`;
-      navigate(path, )
-    }*/
+      navigate(path, {state:{key: id}})
+    }
     const request = () => {
       fetch("http://localhost:3000/product/showProducts", {method:'Get'})
     .then(res => res.json())
@@ -40,7 +40,7 @@ const onClickProduct = (id) =>
             <div className='divCardProduct' key={index}>
             <ul className='productImgName'>
               <li><div className='productImg'><img  src={`./img/${item.image}`} alt={item.name} /></div></li>
-              <li className='productName' >{item.name}</li>
+              <li className='productName' onClick={() => {routeChange(item.id)}}>{item.name}</li>
             </ul>
             <ul className='productInfo'>
                   <li>{item.price} €</li>                 
