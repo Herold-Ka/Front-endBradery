@@ -83,7 +83,7 @@ const ProductPayment = () => {
                                                                    value={productQuantity[index] || ''} 
                                                                    onChange={(e) => handleProductQuantityChange(index, e.target.value)} 
                                                                    name="numberProduct" id="numberProduct" 
-                                                                   min="1" max="10" defaultValue="1"/></div>
+                                                                   min="1" max={data.inventory} defaultValue="1"/></div>
           </div>
         ))}
 

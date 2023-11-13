@@ -32,7 +32,7 @@ const Product = () => {
         <ul className="productInfo">
           <li className="productPrice">{product.price} €</li>
           <li>{product.inventory != 0 ? (<p className="productDisponiblity">Disponible</p>) : (<p className="productDisponiblity">Indisponible</p>)}</li>
-          <li className="productAdd">Ajouter</li>
+          
         </ul>
         </>
       ) : (

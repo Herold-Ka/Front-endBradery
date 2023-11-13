@@ -44,8 +44,8 @@ const onClickProduct = (id) =>
             </ul>
             <ul className='productInfo'>
                   <li>{item.price} €</li>                 
-                  <li>Disponible</li>
-                  <li className='productAdd' onClick={() => onClickProduct(item.id)}>Ajouter</li>
+                  <li>{item.inventory != 0 ? (<p className="productDisponiblity">Disponible</p>) : (<p className="productDisponiblity">Indisponible</p>)}</li>
+                  {item.inventory != 0 ? (<li className='productAdd' onClick={() => onClickProduct(item.id)}>Ajouter</li>) : (<li className='productAdd'>Indisponible</li>)}
                 </ul>
             </div>
             </>
