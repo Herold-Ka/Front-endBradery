@@ -1,13 +1,28 @@
 Prérequis: Node: https://nodejs.org/en ;  Docker-desktop: https://docs.docker.com/desktop/install/windows-install/ ;  Wampserver: https://www.wampserver.com/
 
-Fonctionnement Wampserver :
-Lancer Wampserver, ouvrir phpmyadmin (identifiant: root, pas de mot de passe), importer la base de données (la base de données est dans le fichier du backend : BackendTheBradery/db/backendbradery.sql). 
-Installation Front-end : `npm install`, `npm run dev`. 
-Installation Back-end : Dans le fichier db.js, remplacez "process.env.PASSWORDEXAMPLE" par "process.env.PASSWORDEMPTY", et "process.env.HOSTDB" par "process.env.HOSTLOCAL". Ensuite, exécutez `npm install` et `npm start`.
+Fonctionnement de Wampserver :
+- Lancer Wampserver.
+- Ouvrir phpMyAdmin.
+- Importer la base de données (la base de données se trouve dans le dossier du backend : BackendTheBradery/db/backendbradery.sql).
+- Installation Front-end : `npm install`, `npm run dev`.
+- Installation Back-end : `npm install` et `npm start`.
 
-Fonctionnement Docker :
-ajouter: le fichier "dockerCompose" et "env" envoyer en pièce jointe dans le mail à la racine du projet.
-Installation Back-end : Dans le fichier db.js, remplacez "process.env.PASSWORDEMPTY" par "process.env.PASSWORDEXAMPLE" et "process.env.HOSTLOCAL" par "process.env.HOSTDB". Ensuite, exécutez `Docker Compose up -d`.
+Prérequis :
+
+- Docker Desktop : https://docs.docker.com/desktop/install/windows-install/
+
+Pour déployer avec Docker (Windows) :
+
+- Créer un répertoire local sur votre machine.
+- Cloner le front et le back dans ce même répertoire.
+- Télécharger le fichier zip contenant le docker-compose.
+- Déplacer le fichier zip vers le répertoire local.
+- Dézipper le fichier.
+- Lancer la commande "docker-compose up -d" pour déployer le site web.
+- Enfin, accédez à l'URL : http://localhost:5000/
+
+La disposition des fichiers doit se présenter ainsi: ![Alt text](image.png)
+
 
 Pages créées :
 - SignIn : pour la connexion et l'inscription (non fonctionnelle).
@@ -19,4 +34,8 @@ Fonctionnalités :
 - Panier : Les utilisateurs doivent pouvoir ajouter des produits à leur panier, en respectant la limite de stock disponible.
 - Page de Paiement : Une fois les produits ajoutés, les utilisateurs doivent pouvoir se diriger vers une page de paiement et passer une commande.
 - Commandes : Après avoir passé une commande, une entrée doit être créée dans la base de données avec le prix total et chaque article de la commande. Le stock de produits doit également être mis à jour.
-J'ai corrigé quelques fautes d'orthographe et clarifié certaines phrases pour une meilleure 
+
+Docker Compose :
+- MySQL
+- Le Front
+- Le Back
