@@ -1,7 +1,7 @@
 
 import { useState } from 'react'
-import Connexion from '../components/Connexion/Connexion'
-import Register from '../components/Register/Register'
+import Connexion from '../Components/Connexion/Connexion'
+import Register from '../Components/Register/Register'
 import './SignIn.css'
 const SignIn = () => {
   const [registerData, setRegisterData] = useState([]);
